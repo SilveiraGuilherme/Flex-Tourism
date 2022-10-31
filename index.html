@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexTourism</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="flex-container menu">
+        <div class="header-title">FlexTourism</div>
+        <ul class="list-items">
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#plans">Plans</a></li>
+        </ul>
+      </div>
+    </header>
+    <section class="flex-container presentation">
+      <div class="text-presentation">
+        <h1>Flex<br />Tourism</h1>
+        <p>The best service for you!</p>
+        <a href="" class="btn">Learn more!</a>
+      </div>
+
+      <div>
+        <div>
+          <img src="./images/0-main.png" alt="banner de apresentação" />
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-container">
+      <div class="booking-options">
+        <h2 class="booking-title">Book your flight</h2>
+        <p class="booking-subtitle">
+          Use miles for the best travel packages and enjoy your trip!
+        </p>
+
+        <div class="booking-option">
+          <label for="country-origin">From</label>
+          <select
+            id="country-origin"
+            name="country-origin"
+            onchange="renderCityOption()"
+          ></select>
+
+          <label for="city-origin"></label>
+          <select
+            id="city-origin"
+            name="city-origin"
+            onchange="renderResults()"
+          ></select>
+        </div>
+        <div class="booking-option">
+          <label for="country-destination">To</label>
+          <select
+            id="country-destination"
+            name="country-destination"
+            onchange="renderCityOption()"
+          ></select>
+
+          <label for="city-destination"></label>
+          <select
+            id="city-destination"
+            name="city-destination"
+            onchange="renderResults()"
+          ></select>
+        </div>
+
+        <div class="booking-option">
+          <label for="number-adults">Adults</label>
+          <input
+            type="number"
+            id="number-adults"
+            name="number-adults"
+            min="0"
+            value="1"
+            onchange="renderResults()"
+          />
+        </div>
+        <div class="booking-option">
+          <label for="number-children">Children</label>
+          <input
+            type="number"
+            id="number-children"
+            name="number-children"
+            min="0"
+            value="0"
+            onchange="renderResults()"
+          />
+        </div>
+
+        <div class="booking-option">
+          <input
+            type="radio"
+            id="economy-class"
+            name="ticket-class"
+            value="Coach"
+            checked
+            onchange="renderResults()"
+          />
+          <label for="economy-class">Coach</label>
+        </div>
+        <div class="booking-option">
+          <input
+            type="radio"
+            id="first-class"
+            name="ticket-class"
+            value="First Class"
+            onchange="renderResults()"
+          />
+          <label for="first-class">First Class</label>
+        </div>
+
+        <div class="booking-option">
+          <label for="miles">Use miles</label>
+          <input
+            type="range"
+            id="miles"
+            name="miles"
+            min="0"
+            max="50000"
+            value="0"
+            onchange="updateMilesInput(this.value), showMiles()"
+          />
+          <span id="showMiles"></span>
+        </div>
+      </div>
+
+      <div id="results" class="booking-results"></div>
+    </section>
+
+    <section class="flex-container" id="about-us">
+      <div>
+        <h2>About us</h2>
+        <p>
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout.
+        </p>
+        <p>
+          The point of using Lorem Ipsum is that it has a more-or-less normal
+          distribution of letters, as opposed to using 'Content here, content
+          here', making it look like readable English.
+        </p>
+      </div>
+
+      <div>
+        <img src="./images/1-about-us.png" alt="Front desk" />
+      </div>
+    </section>
+
+    <section class="outer-container">
+      <div class="flex-container" id="services">
+        <div>
+          <h2>Services</h2>
+        </div>
+
+        <div class="list-services">
+          <div class="item-service">
+            <div><img src="./images/icon-2.png" alt="hostings" /></div>
+            <p>Accommodation</p>
+            <a href="#">Buy now</a>
+          </div>
+
+          <div class="item-service">
+            <div><img src="./images/icon-1.png" alt="Travel Packages" /></div>
+            <p>Travel Packages</p>
+            <a href="#">Buy now</a>
+          </div>
+
+          <div class="item-service">
+            <div>
+              <img src="./images/icon-3.png" alt="Personalized Services" />
+            </div>
+            <p>Personalized Tours</p>
+            <a href="#">Buy now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex-container" id="plans">
+      <div><h2>Plans</h2></div>
+
+      <div class="list-plans">
+        <div class="item-plan">
+          <h3>Plan 1</h3>
+          <ul>
+            <li>24h Support</li>
+            <li>Room Services</li>
+            <li>Tour Guide</li>
+          </ul>
+          <a href="#" class="btn">Learn More!</a>
+        </div>
+
+        <div class="item-plan">
+          <h3>Plan 2</h3>
+          <br />
+          <ul>
+            <li>24h Support</li>
+            <li>Room Services</li>
+            <li>Tour Guide</li>
+            <li>Trail Itineraries</li>
+          </ul>
+          <a href="#" class="btn">Learn More!</a>
+        </div>
+
+        <div class="item-plan">
+          <h3>Plano 3</h3>
+          <br />
+          <ul>
+            <li>24h Support</li>
+            <li>Room Services</li>
+            <li>Tour Guide</li>
+            <li>Trail Itineraries</li>
+            <li>Personalized Services</li>
+            <li>Vip Area</li>
+          </ul>
+          <a href="#" class="btn">Learn More!</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="flex-container footer">
+        <p>&copy; 2022 CSS Flexbox</p>
+        <p>Developed by: Guilherme Silveira</p>
+      </div>
+    </footer>
+
+    <script defer src="/script.js"></script>
+  </body>
+</html>
